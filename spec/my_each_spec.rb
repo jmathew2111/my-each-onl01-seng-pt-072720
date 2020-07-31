@@ -49,52 +49,52 @@ describe "my_each" do
   end
 
   it "returned array contains the same elements as the original collection" do
-    tas = ['arel', 'jon', 'logan', 'spencer']
+  #  tas = ['arel', 'jon', 'logan', 'spencer']
 
     # run the method
-    expect(my_each(tas) do |ta|
+#    expect(my_each(tas) do |ta|
     # Do nothing on yield
     # check if it returns correct values
-    end).to contain_exactly('arel', 'jon', 'logan', 'spencer')
-  end
+  #  end).to contain_exactly('arel', 'jon', 'logan', 'spencer')
+ # end
 
-  it "does not modify the original collection" do
-    tas = ['arel', 'jon', 'logan', 'spencer']
+ # it "does not modify the original collection" do
+  #  tas = ['arel', 'jon', 'logan', 'spencer']
     # array may be modified by the iteration function so
     # we cannot use it for verifying the results
     # therefore we create a new copy using the clone method
     tas_original = tas.clone
 
     # run the method
-    my_each(tas) do |ta|
-      ta = "testing 1 2 3"
-    end
+  #  my_each(tas) do |ta|
+  #    ta = "testing 1 2 3"
+ #   end
 
     # is verifying if the array we passed to method
     # has not been modified
-    expect(tas).to eq(tas_original)
-  end
+ #   expect(tas).to eq(tas_original)
+ # end
 
-  it "block is run n times" do
-    tas = ['arel', 'jon', 'logan', 'spencer']
-    expected = tas.length
-    times_called = 0
+  #it "block is run n times" do
+  #  tas = ['arel', 'jon', 'logan', 'spencer']
+  #  expected = tas.length
+  #  times_called = 0
 
-    my_each(tas) do |ta|
-      times_called += 1
-    end
+  #  my_each(tas) do |ta|
+ #     times_called += 1
+   # end
 
-    expect(times_called).to eq(expected)
-  end
+#    expect(times_called).to eq(expected)
+  #end
 
-  it "only passes a single element into the block at a time" do
+ # it "only passes a single element into the block at a time" do
 
-    tas = ['arel', 'jon', 'logan', 'spencer']
+  #  tas = ['arel', 'jon', 'logan', 'spencer']
 
-    my_each(tas) do |ta|
+  #  my_each(tas) do |ta|
       # ta cannot be an array
-      expect(ta.kind_of?(Array)).to eq(false)
-      expect(ta.kind_of?(String)).to eq(true)
-    end
-  end
+   #   expect(ta.kind_of?(Array)).to eq(false)
+  #    expect(ta.kind_of?(String)).to eq(true)
+  #  end
+  #end
 #end
