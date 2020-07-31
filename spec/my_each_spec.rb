@@ -1,4 +1,4 @@
-require_relative 'spec_helper'
+##require_relative 'spec_helper'
 require 'pry'
 
 describe "my_each" do
@@ -97,4 +97,4 @@ describe "my_each" do
       expect(ta.kind_of?(String)).to eq(true)
     end
   end
-end
+#end
